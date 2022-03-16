@@ -39,6 +39,33 @@ If you don't provide the target and the source repos as parameters the CLI will 
 ### Disclamer 
 This time of command you override everything in the target repository, so you must have the corrects permissions to do that.
 
+
+# Contribute
+
+Fell free to contribute 😊
+
+To run the project locally you will need:
+- Node v16.x.x
+- NPM
+
+First Install the npm dependencies:
+```
+npm install
+```
+
+Link the project into you global NPM:
+```
+npm link
+```
+
+Now you can change the code and then test it by the command line.
+
+## Road map
+- Better messages (text and colors)
+- Better erro handling
+- Tests
+- Debug
+
 ## License
 
 MIT

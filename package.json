@@ -1,6 +1,10 @@
 {
   "name": "@frankgalindo/mirror-repo",
   "version": "0.0.4",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frankgalindo/mirror-repo-cli"
+  },
   "description": "",
   "main": "src/index.js",
   "bin": {

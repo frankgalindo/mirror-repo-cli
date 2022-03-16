@@ -37,7 +37,7 @@ If you don't provide the target and the source repos as parameters the CLI will 
 ```
 
 ### Disclamer 
-This time of command you override everything in the target repository, so you must have the corrects permissions to do that.
+This type of command will override everything in the target repository, so you must have the corrects permissions to do that.
 
 
 # Contribute

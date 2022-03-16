@@ -16,7 +16,7 @@ function parseArgumentsIntoOptions(rawArgs) {
   return {
     sourceRepo: args["--sourceRepo"] || "",
     targetRepo: args["--targetRepo"] || "",
-    skipConfirmation: args["--y"] || false,
+    confirmation: args["--y"] || false,
   };
 }
 
@@ -36,10 +36,10 @@ async function promptForMissingOptions(options) {
     validate: (input) => (input ? true : false),
   });
 
-  if (!options.skipConfirmation){
+  if (!options.confirmation) {
     questions.push({
       type: "confirm",
-      name: "skipConfirmation",
+      name: "confirmation",
       message:
         "This command will override the target repo, do you want to continue?",
     });
@@ -51,13 +51,19 @@ async function promptForMissingOptions(options) {
     ...options,
     sourceRepo: options.sourceRepo || answers.sourceRepo,
     targetRepo: options.targetRepo || answers.targetRepo,
-    skipConfirmation: options.skipConfirmation || answers.skipConfirmation,
+    confirmation: options.confirmation || answers.confirmation,
   };
 }
 
 export async function cli(args) {
   let options = parseArgumentsIntoOptions(args);
   options = await promptForMissingOptions(options);
-  console.log(options);
-//   await mirrorRepo(options);
+
+  if (options.confirmation) {
+    await mirrorRepo(options);
+  } else{
+      console.log("Exiting...")
+  }
+
+
 }

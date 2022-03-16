@@ -62,7 +62,7 @@ Now you can change the code and then test it by the command line.
 
 ## Road map
 - Better messages (text and colors)
-- Better erro handling
+- Better error handling
 - Tests
 - Debug
 

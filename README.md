@@ -1,3 +1,6 @@
+[![Node.js Package](https://github.com/frankgalindo/mirror-repo-cli/actions/workflows/npm-publish.yml/badge.svg?branch=main)](https://github.com/frankgalindo/mirror-repo-cli/actions/workflows/npm-publish.yml)
+[![npm version](https://img.shields.io/npm/v/@frankgalindo/mirror-repo.svg?style=flat-square)](https://www.npmjs.com/package/@frankgalindo/mirror-repo)
+
 # `@frankgalindo/mirror-repo`
 
 🏗 CLI to help to the mirror from a GIT repository to another

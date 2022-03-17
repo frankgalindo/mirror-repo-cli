@@ -8,11 +8,9 @@
 ## Installation
 
 ```bash
-npm init @frankgalindo/mirror-repo
-# or
-npx @frankgalindo/mirror-repo
-# or
 npm install -g @frankgalindo/mirror-repo
+# or use NPX to do not install globally
+npx @frankgalindo/mirror-repo
 ```
 ## Usage
 
@@ -42,7 +40,6 @@ If you don't provide the target and the source repos as parameters the CLI will 
 ### Disclamer 
 This type of command will override everything in the target repository, so you must have the corrects permissions to do that.
 
-
 # Contribute
 
 Fell free to contribute 😊
@@ -69,10 +66,10 @@ Now you can change the code and then test it by the command line.
 - Tests
 - Debug
 
-## License
-
-MIT
-
 ## Collaborators
 
 - Frank Galindo <https://www.linkedin.com/in/frank-galindo/>
+
+## License
+
+MIT

@@ -6,21 +6,27 @@ export default async function mirrorRepo(options) {
     shell.exit(1);
   }
 
-  const tempFolder = `temp-${new Date().toLocaleDateString().replaceAll("/", "")}`;
+  const tempFolder = `temp-${new Date()
+    .toLocaleDateString()
+    .replaceAll("/", "")}`;
 
-  // Run external tool synchronously
-  if (shell.exec(`git clone --bare ${options.sourceRepo} ${tempFolder}`).code !== 0) {
+  // Try delete the folder in case it already exists
+  shell.rm("-rf", tempFolder);
+
+  if (
+    shell.exec(`git clone --bare ${options.sourceRepo} ${tempFolder}`).code !==
+    0
+  ) {
     shell.echo("Error: Git commit failed");
+    shell.rm("-rf", tempFolder);
     shell.exit(1);
   }
 
   shell.cd(tempFolder);
 
-  if (
-    shell.exec(`git push --mirror ${options.targetRepo}`).code !==
-    0
-  ) {
+  if (shell.exec(`git push --mirror ${options.targetRepo}`).code !== 0) {
     shell.echo("Error: Git commit failed");
+    shell.rm("-rf", tempFolder);
     shell.exit(1);
   }
 

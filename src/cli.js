@@ -64,6 +64,4 @@ export async function cli(args) {
   } else{
       console.log("Exiting...")
   }
-
-
 }

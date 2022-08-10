@@ -8,7 +8,7 @@ export default async function mirrorRepo(options) {
 
   const tempFolder = `temp-${new Date()
     .toLocaleDateString()
-    .replaceAll("/", "")}`;
+    .replace(/\//g, "")}`;
 
   // Try delete the folder in case it already exists
   shell.rm("-rf", tempFolder);
